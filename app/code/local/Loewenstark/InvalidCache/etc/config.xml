@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Loewenstark_InvalidCache>
+            <version>0.0.0.1</version>
+        </Loewenstark_InvalidCache>
+    </modules>
+    <global>
+        <models>
+            <invalidcache>
+                <class>Loewenstark_InvalidCache_Model</class>
+            </invalidcache>
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <controller_action_postdispatch_adminhtml_catalog_product_save>
+                <observers>
+                    <invalidcache>
+                        <class>invalidcache/observer</class>
+                        <method>clearBlockCache</method>
+                    </invalidcache>
+                </observers>
+            </controller_action_postdispatch_adminhtml_catalog_product_save>
+        </events>
+    </adminhtml>
+    <crontab>
+        <jobs>
+            <invalidcache_cron>
+                <schedule><cron_expr>*/15 * * * * </cron_expr></schedule>
+                <run>
+                    <model>invalidcache/observer::clearInvalidCache</model>
+                </run>
+            </invalidcache_cron>
+        </jobs>
+    </crontab>
+</config>

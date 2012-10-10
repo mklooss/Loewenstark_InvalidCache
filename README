@@ -1,0 +1,3 @@
+Fixed Invalid Cache per Controller Event and CronJob (Default every 15 min)
+
+This Extensions Checks wich Cache Type is Invalid and Fix this.
