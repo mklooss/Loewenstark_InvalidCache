@@ -11,6 +11,7 @@ class Loewenstark_InvalidCache_Model_Observer
     public function clearBlockCache(Varien_Event_Observer $observer)
     {
         Mage::app()->getCacheInstance()->cleanType('block_html');
+        Mage::app()->getCacheInstance()->cleanType('fpc'); // for magento enterprise
         return $this;
     }
     
