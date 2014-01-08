@@ -1,0 +1,10 @@
+{
+   "name": "loewenstark/invalidcache",
+   "license": ["GPL-3.0"],
+   "type": "magento-module",
+   "description": "Workaround to fix Invalid Caches",
+   "homepage": "https://github.com/mklooss/Loewenstark_InvalidCache",
+   "require": {
+      "magento-hackathon/magento-composer-installer": "*"
+   }
+}
